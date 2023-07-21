@@ -1,0 +1,10 @@
+Exception in user code:
+------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/bin/pyscript", line 103, in <module>
+    execfile(args[0],globals)
+  File "exercise.py", line 15
+    def store(self, data: Union[str, bytes, int, float]) -> str:
+                        ^
+SyntaxError: invalid syntax
+------------------------------------------------------------
