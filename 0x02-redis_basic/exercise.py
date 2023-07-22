@@ -5,7 +5,7 @@
 import redis
 import uuid
 from typing import Union, Callable
-from functtools import wraps
+from functools import wraps
 
 
 class Cache:
@@ -14,6 +14,7 @@ class Cache:
         self._redis.flushdb()
 
     @wraps
+    @staticmethod
     def store(self, data: Union[str, bytes, int, float]) -> str:
         key = str(uuid.uuid4())
         """ store the input in Redis"""
