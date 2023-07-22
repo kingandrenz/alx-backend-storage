@@ -22,7 +22,7 @@ class Cache:
         return key
 
 
-def count_calls(method: Callable) -> Callable:
+def count_calls(method: callable) -> callable:
     """ Incrementing Value """
     @wraps(method)
     def wrapper(self, *args, **kwargs):
