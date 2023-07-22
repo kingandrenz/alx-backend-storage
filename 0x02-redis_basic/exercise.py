@@ -14,7 +14,6 @@ class Cache:
         self._redis.flushdb()
 
     @wraps
-    @staticmethod
     def store(self, data: Union[str, bytes, int, float]) -> str:
         key = str(uuid.uuid4())
         """ store the input in Redis"""
