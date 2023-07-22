@@ -7,6 +7,7 @@ import uuid
 from typing import Union, Callable
 from functiontools import wraps
 
+
 class Cache:
     def __init__(self):
         self._redis = redis.Redis()
@@ -20,7 +21,8 @@ class Cache:
 
         return key
 
-    def get(self, key: str, fn: callable = None) -> Union[str, bytes, int, float, None]:
+    def get(self, key: str, fn: callable = None) -> Union[str, bytes,
+                                                          int, float, None]:
         """retrievs data from Redis
         """
         data = self._redis.get(key)
@@ -43,8 +45,10 @@ class Cache:
         """
         return self.get(key, fn=int)
 
+
 def count_calls(method: Callable) -> Callable:
-    """ Incrementing Value """
+    """ Incrementing Value
+    """
     @wraps(method)
     def wrapper(self, *args, **kwargs):
         key = method.__qualname__
